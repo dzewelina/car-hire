@@ -1,0 +1,51 @@
+.form {
+  background-color: #1879ca;
+  padding: 16px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .form {
+    background-image: url(https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/home/background-large.jpg);
+  }
+}
+
+.form-title {
+  color: white;
+}
+
+.input-container {
+  background-color: #ffb700;
+  border-radius: 12px;
+  padding: 4px;
+  position: relative;
+  display: flex;
+}
+
+.icon-input {
+  position: relative;
+  display: flex;
+  border-radius: inherit;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+}
+
+.icon-input i {
+  position: absolute;
+  left: 16px;
+  right: auto;
+}
+
+.input {
+  width: 100%;
+  height: 64px;
+  border-radius: inherit;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 24px;
+  outline: none;
+  padding-left: 44px;
+}
