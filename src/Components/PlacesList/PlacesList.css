@@ -1,0 +1,68 @@
+ul {
+  list-style: none;
+  background-color: white;
+  margin: 4px;
+  margin-top: 0;
+  padding-left: 0;
+  box-shadow: 0 calc(4px / 2) calc(4px * 2) rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+}
+
+.li-element {
+  padding: 12px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.li-place-type {
+  min-width: 5.1rem;
+  padding: 0.3rem 0;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.City {
+  background-color: #0071c2;
+  color: #fff;
+}
+.Airport {
+  background-color: #ff8000;
+  color: #262626;
+}
+.Station {
+  background-color: #1879ca;
+  color: #fff;
+}
+.District {
+  background-color: #008009;
+  color: #fff;
+}
+.Region {
+  background-color: #f1c74c;
+  color: #222;
+}
+
+.li-place-info {
+  padding-left: 12px;
+}
+
+.li-place-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.li-place-description {
+  margin: 0;
+  color: #474747;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}

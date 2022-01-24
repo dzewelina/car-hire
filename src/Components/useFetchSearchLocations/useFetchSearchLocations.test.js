@@ -1,8 +1,8 @@
 import { renderHook } from "@testing-library/react-hooks";
-import { useFetchSearchLocations, text } from "./SearchForm";
-import fetchLocations from "./fetchLocations";
+import useFetchSearchLocations from "../useFetchSearchLocations/useFetchSearchLocations";
+import fetchLocations from "../../Functions/fetchLocations";
 
-jest.mock("./fetchLocations");
+jest.mock("../../Functions/fetchLocations");
 
 describe("useFetchSearchLocations", () => {
   beforeEach(() => {

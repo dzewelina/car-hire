@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const fetchLocations = async (location, numOfLoc) => {
-  //   console.log("INSIDE FETCH!!!!!!");
   try {
     return await axios
       .get(
