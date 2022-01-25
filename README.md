@@ -1,70 +1,83 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+Car hire locations search app built with `React.js` (node version 17.4.0, npm version 8.3.1).\
+Contains Search form with 'Pick-up Location' label which:
 
-### `npm start`
+- searches results for 2 or more alphanumeric characters
+- displays maximum of 6 results
+- displays message if no results found
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You will need Node.js, npm and git installed before being able to run this project.
 
-### `npm test`
+- To check if `Node.js` is installed on your machine open a terminal window and enter:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```
+  $ node -v
+  ```
 
-### `npm run build`
+  If you do not already have Node.js installed follow the instructions on [this guide](https://nodejs.org/en/download/package-manager/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- To check if `npm` is installed on your machine enter this command in you terminal window:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```
+  $ npm -v
+  ```
+
+  If you do not have npm already installed follow [this guide](https://www.npmjs.com/get-npm) to set it up.
+
+- To check if `git` is installed on your machine enter the following in your terminal window:
+
+  ```
+  $ git --version
+  ```
+
+  If you do not already have git installed on your machine follow [this guide](https://git-scm.com/).
+
+## Installation
+
+To run this project you will need to clone this repository onto your local machine.
+
+```
+$ git clone https://github.com/dzewelina/car-hire.git
+```
+
+Navigate inside the folder and install all dependencies by entering the following commands on your terminal window:
+
+```
+$ cd car-hire
+$ npm install
+```
+
+To run the application locally enter:
+
+```
+$ npm start
+```
+
+The application will run on http://localhost:3000.
+
+## Testing
+
+To run tests navigate to the project directory and enter the following command:
+
+```
+$ npm test
+```
+
+Testing was carried out using Jest, Enzyme and React Hooks Testing Library.
+
+## Building
+
+To build app to make it ready to be deployed run:
+
+```
+$ npm run build
+```
+
+It will build the app for production to the `build` folder.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
