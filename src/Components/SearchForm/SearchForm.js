@@ -11,23 +11,25 @@ const SearchForm = () => {
   const handleOnChange = (event) => setSerchText(event.target.value);
 
   return (
-    <form role="search" className="form">
-      <h1 className="form-title">{text.title}</h1>
-      <div className="input-container">
-        <div className="icon-input">
-          <i className="fa fa-search icon"></i>
-          <input
-            className="input"
-            type="text"
-            aria-label={text.screenReaderLabel}
-            placeholder={text.placeholderText}
-            value={searchText}
-            onChange={handleOnChange}
-          />
+    <div className="form-container">
+      <form role="search" className="form">
+        <h1 className="form-title">{text.title}</h1>
+        <div className="input-container">
+          <div className="icon-input">
+            <i className="fa fa-search icon"></i>
+            <input
+              className="input"
+              type="text"
+              aria-label={text.screenReaderLabel}
+              placeholder={text.placeholderText}
+              value={searchText}
+              onChange={handleOnChange}
+            />
+          </div>
         </div>
-      </div>
-      <PlacesList places={places} />
-    </form>
+        <PlacesList places={places} />
+      </form>
+    </div>
   );
 };
 
