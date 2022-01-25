@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import fetchLocations from "../../Functions/fetchLocations";
 import useDebounce from "../../Functions/useDebounce";
-import { text } from "../../consts";
+import { noResults } from "../../consts";
 
 const useFetchSearchLocations = (searchText) => {
   const maxNumberOfLoc = 6;
@@ -14,7 +14,7 @@ const useFetchSearchLocations = (searchText) => {
     if (debouncedSearchText && debouncedSearchText.length > 1) {
       fetchLocations(debouncedSearchText, maxNumberOfLoc).then((data) => {
         if (data[0].name === "No results found") {
-          setPlaces([{ name: text.noResults, placeKey: "no-results" }]);
+          setPlaces(noResults);
         } else {
           setPlaces(data);
         }

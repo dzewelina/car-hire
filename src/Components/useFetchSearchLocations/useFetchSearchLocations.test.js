@@ -1,7 +1,8 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook, act } from "@testing-library/react-hooks";
 import useFetchSearchLocations from "../useFetchSearchLocations/useFetchSearchLocations";
 import * as fetchLocations from "../../Functions/fetchLocations";
 import * as useDebounce from "../../Functions/useDebounce";
+import { noResults } from "../../consts";
 
 describe("useFetchSearchLocations", () => {
   let mockedFetchLocations;
@@ -38,21 +39,25 @@ describe("useFetchSearchLocations", () => {
     expect(mockedFetchLocations).toHaveBeenCalledWith("manchester", 6);
   });
 
-  it("should debounce reguested  search text", () => {
+  it("should save message when input is not recognised", async () => {
+    mockedFetchLocations.mockImplementation(() =>
+      Promise.resolve([{ name: "No results found" }])
+    );
+
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useFetchSearchLocations("manchester")
+    );
+
+    await act(async () => waitForNextUpdate());
+
+    expect(result.current).toEqual(noResults);
+  });
+
+  it("should debounce reguested search text", () => {
     jest.spyOn(useDebounce, "default");
     const mockedUseDebounce = useDebounce.default;
     renderHook(() => useFetchSearchLocations("manchester"));
 
     expect(mockedUseDebounce).toHaveBeenCalledWith("manchester", 500);
   });
-
-  //   it("should save message when input is not recognised", () => {
-  //     fetchLocations.mockImplementation(
-  //       () => new Promise(() => [{ name: "No results found" }])
-  //     );
-
-  //     const { result } = renderHook(() => useFetchSearchLocations("manchester"));
-  //     // expect(fetchLocations).toReturnWith({});
-  //     expect(result).toEqual([]);
-  //   });
 });

@@ -12,3 +12,5 @@ export const PlacesTypes = {
   F: "Region",
   T: "Station",
 };
+
+export const noResults = [{ name: text.noResults, placeKey: "no-results" }];
