@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
 import SearchForm from "./SearchForm";
 import { text } from "../../consts";
 
@@ -25,5 +26,12 @@ describe("SearchForm", () => {
 
   it("should render search form with title", () => {
     expect(wrapper.find("h1").text()).toBe(text.title);
+  });
+
+  it("should update search text on input change", () => {
+    const { getByLabelText } = render(<SearchForm />);
+    const input = getByLabelText(text.screenReaderLabel);
+    fireEvent.change(input, { target: { value: "Manchester" } });
+    expect(input.value).toBe("Manchester");
   });
 });

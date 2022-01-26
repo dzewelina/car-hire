@@ -3,6 +3,7 @@ import useFetchSearchLocations from "../useFetchSearchLocations/useFetchSearchLo
 import * as fetchLocations from "../../Functions/fetchLocations";
 import * as useDebounce from "../../Functions/useDebounce";
 import { noResults } from "../../consts";
+import { testPlaces } from "../../test.data";
 
 describe("useFetchSearchLocations", () => {
   let mockedFetchLocations;
@@ -39,7 +40,7 @@ describe("useFetchSearchLocations", () => {
     expect(mockedFetchLocations).toHaveBeenCalledWith("manchester", 6);
   });
 
-  it("should save message when input is not recognised", async () => {
+  it("should return message when input is not recognised", async () => {
     mockedFetchLocations.mockImplementation(() =>
       Promise.resolve([{ name: "No results found" }])
     );
@@ -51,6 +52,18 @@ describe("useFetchSearchLocations", () => {
     await act(async () => waitForNextUpdate());
 
     expect(result.current).toEqual(noResults);
+  });
+
+  it("should return fetched data", async () => {
+    mockedFetchLocations.mockImplementation(() => Promise.resolve(testPlaces));
+
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useFetchSearchLocations("manchester")
+    );
+
+    await act(async () => waitForNextUpdate());
+
+    expect(result.current).toEqual(testPlaces);
   });
 
   it("should debounce reguested search text", () => {

@@ -2,33 +2,9 @@ import React from "react";
 import { shallow } from "enzyme";
 import PlacesList from "./PlacesList";
 import { PlacesTypes } from "../../consts";
+import { testPlaces } from "../../test.data";
 
 describe("PlacesList", () => {
-  const testPlaces = [
-    {
-      city: "Manchester",
-      country: "United Kingdom",
-      name: "Manchester Airport",
-      placeKey: "1472187",
-      placeType: "A",
-      region: "Greater Manchester",
-    },
-    {
-      country: "United Kingdom",
-      name: "Manchester",
-      placeKey: "441725",
-      placeType: "C",
-      region: "Greater Manchester",
-    },
-    {
-      city: "Manchester",
-      country: "United Kingdom",
-      name: "Stockport",
-      placeKey: "445131",
-      placeType: "C",
-    },
-  ];
-
   it("should not display results if no places", () => {
     const wrapper = shallow(<PlacesList places={[]} />);
     expect(wrapper.find("li").length).toBe(0);
