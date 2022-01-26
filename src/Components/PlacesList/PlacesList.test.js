@@ -29,6 +29,24 @@ describe("PlacesList", () => {
     expect(secondPlace.find("p").at(0).text()).toBe(expectedText);
   });
 
+  it("should display place name with iata", () => {
+    const testData = [
+      {
+        city: "Manchester",
+        country: "United Kingdom",
+        name: "Stockport",
+        placeKey: "445131",
+        placeType: "C",
+        iata: "MAN",
+      },
+    ];
+
+    const wrapper = shallow(<PlacesList places={testData} />);
+    const secondPlace = wrapper.find("li").at(0);
+    const expectedText = `${testData[0].name} (${testData[0].iata})`;
+    expect(secondPlace.find("p").at(0).text()).toBe(expectedText);
+  });
+
   it("should display place description correctly", () => {
     const wrapper = shallow(<PlacesList places={testPlaces} />);
     const firstPlace = wrapper.find("li").at(0);
