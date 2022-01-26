@@ -6,8 +6,11 @@ Car hire locations search app built with `React.js` (node version 17.4.0, npm ve
 Contains Search form with 'Pick-up Location' label which:
 
 - searches results for 2 or more alphanumeric characters
+- debounce request to improve performance (500ms delay)
 - displays maximum of 6 results
 - displays message if no results found
+
+Live demo of the app can be see here: https://car-hire-dzewelina.netlify.app/ .
 
 ## Setup
 
@@ -68,6 +71,12 @@ To run tests navigate to the project directory and enter the following command:
 $ npm test
 ```
 
+To check test coverage enter:
+
+```
+$ npm run test -- --coverage .
+```
+
 Testing was carried out using Jest, Enzyme and React Hooks Testing Library.
 
 ## Building
@@ -81,3 +90,7 @@ $ npm run build
 It will build the app for production to the `build` folder.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Hosting
+
+This app is hosted at [Netlify](https://www.netlify.com/) and can be accessed at https://car-hire-dzewelina.netlify.app/ .
