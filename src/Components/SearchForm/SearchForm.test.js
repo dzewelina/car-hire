@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import { render, fireEvent } from "@testing-library/react";
 import SearchForm from "./SearchForm";
+import PlacesList from "../PlacesList/PlacesList";
 import { text } from "../../consts";
 
 describe("SearchForm", () => {
@@ -33,5 +34,9 @@ describe("SearchForm", () => {
     const input = getByLabelText(text.screenReaderLabel);
     fireEvent.change(input, { target: { value: "Manchester" } });
     expect(input.value).toBe("Manchester");
+  });
+
+  it("should render places list", () => {
+    expect(wrapper.find(PlacesList).exists()).toBeTruthy();
   });
 });
