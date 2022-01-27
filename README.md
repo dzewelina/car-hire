@@ -94,3 +94,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Hosting
 
 This app is hosted at [Netlify](https://www.netlify.com/) and can be accessed at https://car-hire-dzewelina.netlify.app/ .
+
+## Next steps
+
+- Input validation
+- Error handling
+- Spinner inside input when waiting for data
+- Display clicked item in input field
+- Testing with React Testing Library
